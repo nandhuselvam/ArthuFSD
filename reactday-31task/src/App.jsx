@@ -1,34 +1,60 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
+import React from 'react'
+import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom'
 import './App.css'
 
-function App() {
-  const [count, setCount] = useState(0)
+import FullStackDevelopment from './FullStackDevelopment'
+import All from './All'
+import DataScience from './DataScience'
+import CyberSecurity from './CyberSecurity'
+import Career from './Career'
 
+function App() {
   return (
-    <div className="App">
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src="/vite.svg" className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://reactjs.org" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </div>
+    <Router>
+
+        <div>
+          <nav>
+            <ul>
+             <li>
+                <Link to="/all"> </Link>
+                <a href="https://www.guvi.in/blog/search/All">All</a>
+              </li>
+              <li>
+                <Link to="/fullstackdevelopment"></Link>
+                <a href="https://www.guvi.in/blog/search/Full+Stack+Development">FullStackDevelopment</a>
+              </li>
+              <li>
+                <Link to="/datascience"> </Link>
+                <a href="https://www.guvi.in/blog/search/datascience/">DataScience</a>
+
+                
+              </li>
+              <li>
+                <Link to="/cybersecurity"> </Link>
+                <a href="https://www.guvi.in/blog/search/CyberSecurity">CyberSecurity</a>
+              </li>
+              <li>
+                <Link to="/career"> </Link>
+                <a href="https://www.guvi.in/blog/search/Career">Career</a>
+              </li>
+            </ul>
+          </nav>
+        
+
+      <Routes>
+          
+          <Route path='/all' Component={All}></Route>
+          <Route path='/fullstackdevelopment' Component={FullStackDevelopment}></Route>
+          <Route path='/datascience' Component={DataScience}></Route>
+          <Route path='/cybersecurity' Component={CyberSecurity}>CyberSecurity</Route>
+          <Route path='/career' Component={Career}></Route>
+      </Routes>
+
+        </div>
+    </Router>
   )
 }
 
 export default App
+
+

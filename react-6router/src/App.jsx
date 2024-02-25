@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import './App.css'
-import ReactAxios from './ReactAxios.jsx'
+import ParentComponent from './ParentComponent'
 
 
 function App() {
@@ -9,7 +9,7 @@ function App() {
 
   return (
     <div>
-      <ReactAxios />
+      <ParentComponent />
 
     </div>
   )
